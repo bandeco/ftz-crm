@@ -19,12 +19,16 @@
 		@include('contact.affichage-liste-contact')
 	@endif
 
+	@if(isset($results))
+		@include('contact-research')
+	@endif
+
 	<div class="col-md-3 content-sidebar" >
 			<div class="col-md-12">
 				<p>Importer / Exporter</p>
 			</div>
 			<div class="col-md-12">
-				<a href="{{ route('import-option')}}">
+				<a href="{{ route('import.index')}}">
 					<span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span> Importer des contacts
 				</a>
 			</div>	

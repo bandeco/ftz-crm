@@ -104,11 +104,12 @@
 	  		</tr>
 	  		<tr> 
 	  			<td><span class="title-profil">Pays</span></td>
-	  			<td><span class="info">{{ $profil->pays_clt.' ('.$profil->ville_siege_clt.')' }}</span></td>
-	  		</tr>
-	  		<tr> 
-	  			<td><span class="title-profil">Ville</span></td>
-	  			<td><span class="info">{{ $profil->ville_siege_clt }}</span></td>
+	  			<td>
+	  				<span class="info">
+	  					{{ $profil->pays_clt }} 
+	  					@if($profil->ville_siege_clt) {{('.$profil->ville_siege_clt.')' }} @endif
+	  				</span>
+	  			</td>
 	  		</tr>
 	  		<tr> 
 	  			<td><span class="title-profil">Adresse</span></td>

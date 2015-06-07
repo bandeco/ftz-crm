@@ -3,16 +3,17 @@
 	
 	
 	     <div class="row">
+	     {!! Form::open(['route'=>'contact.search', 'method'=>'GET']) !!}
 		  <div class="col-lg-4 left-btn-search">
 		      <div class="input-group">
-		        <input type="text" class="form-control" placeholder="Search for...">
+		        <input type="text" name="q" class="form-control" placeholder="Search for...">
 		        <span class="input-group-btn">
-		          <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> </button>
+		          <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> </button>
 		        </span>
 		      </div><!-- /input-group -->
 		    </div><!-- /.col-lg-6 -->
-		  
-		  
+		 {!! Form::close(); !!}
+		  <a href="{{route('contact.search')}}">Rechercher</a>
 	<div class="col-md-6 col-md-offset-2 right-btn-filter">
 	<div id="navbar-action" class="navbar-collapse collapse navbar-right" >
 		<a class="btn btn-default btn-smenu-position ajout" id="grille" href="" title="Grille" role="button">

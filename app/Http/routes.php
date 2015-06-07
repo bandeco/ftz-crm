@@ -17,22 +17,24 @@ Route::get('/','WelcomeController@index');
 
 /* Societe & Contact Views Routes */
 
+Route::get('contact/search',['as'=>'contact.search','uses'=>'ContactController@search']);
+
 Route::resource('societe', 'SocieteController');
 
 Route::resource('contact', 'ContactController');
 
 Route::get('{id}/creer-contact',['as'=> 'creer.contact', 'uses'=> 'ContactController@creercontact']);
 
+
+
 /* Import & Export Views Routes */
+
+Route::get('import/google',['as'=>'import.google','uses'=>'ImportController@ImportGoogleContact']);
 
 Route::resource('import','ImportController');
 
 Route::resource('export','ExportController');
 
-Route::get('import-option',['as'=>'import-option',function(){
-		$actif = 'contact';
-		return view ('contact.import-contact',compact('actif'));
-}]);
 
 
 

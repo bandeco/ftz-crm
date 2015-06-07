@@ -75,6 +75,19 @@ class ContactController extends Controller {
 	}
 
 	/**
+	 * Display the research results.
+	 *
+	 * @return Response
+	 */
+	public function search(Request $request)
+	{
+		$actif = 'actif';
+		$q = $request->input('q');
+		
+		return ('Hello World '.$q);
+	}
+
+	/**
 	 * Show the form for editing the specified resource.
 	 *
 	 * @param  int  $id

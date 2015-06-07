@@ -8,7 +8,8 @@
     <meta name="Plateforme de gestion de la relation clientèle FTZ" content="">
     <meta name="ousmane-hassane" content="">
     <link rel="icon" href="{{ WEBROOT}}/img/favicon/favicon.ico">
-		
+	    
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	@yield('head')
 
     <title> @yield('title') </title>
@@ -127,7 +128,7 @@
      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/customjs.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

@@ -5,7 +5,6 @@
     ================================================== -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
   <script src="js/fileinput.min.js" type="text/javascript"></script>
   <!-- bootstrap.js below is only needed if you wish to use the feature of viewing details 
        of text file preview via modal dialog -->
@@ -39,10 +38,10 @@
 
   <!-- Importation de données à partir de Gmail Contact -->
 	<div class="col-md-12 import-export"> 
-		<a href="" class="pull-left"  >
+		<a href="{{ route('import.google') }}" class="pull-left"  >
 			<img src="{{ WEBROOT }}/img/icon-gmail.png">
 		</a>
-		<a href=""><strong>Importer des contacts de Gmail</strong></a>
+		<a href=" {{ route('import.google') }}"><strong>Importer des contacts de Gmail</strong></a>
 		<p class="detail-link">Choisissez certains contacts à importer de votre carnet d’adresses Gmail dans Google Apps.</p>
 	</div>
 
@@ -52,7 +51,7 @@
 			<img src="{{ WEBROOT }}/img/icon-csv.png">
 		</a>
 		<a href="#importation" data-toggle="collapse" aria-expanded="false" aria-controls="importation" >
-			<strong>Importer des contacts d'un fichier CSV</strong>
+			<strong>Importer des contacts d'un fichier CSV ou EXCEL</strong>
 		</a>
 		<p class="detail-link">L’exportation vers un fichier au format CSV (valeurs séparées par des virgules) est disponible à partir de presque toutes les bases de données et feuilles de calcul</p>
 		
@@ -78,13 +77,6 @@
   		</div>
 	</div>
 	<!-- Autre Improtation  -->
-	<div class="col-md-12 import-export"> 
-		<a href="" class="pull-left"  >
-			<img src="{{ WEBROOT }}/img/icon-xls.png">
-		</a>
-		<a href=""><strong>Importer des contacts d’un fichier Excel</strong></a>
-		<p class="detail-link">Importer à partir d’un fichier Microsoft Excel XLS ou XLSX</p>
-	</div>
 	<div class="col-md-12 import-export"> 
 		<a href="" class="pull-left"  >
 			<img src="{{ WEBROOT }}/img/icon-outlook.png">

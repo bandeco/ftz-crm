@@ -1,6 +1,8 @@
-<?php namespace App;
+<?php namespace App; 
 
 use Illuminate\Database\Eloquent\Model;
+
+use  SearchIndex;
 
 class Societe extends Model {
 
@@ -11,5 +13,22 @@ class Societe extends Model {
 
 		return $this->HasMany('App\Contact');
 	}
+
+	/**
+     * Returns an array with properties which must be indexed
+     *
+     * @return array
+     */
+    public function getSearchableBody()
+    {
+        $searchableProperties = [
+            'name' => $this->name,
+            'brand' => $this->brand->name,
+            'category' => $this->category->name
+        ];
+
+        return $searchableProperties;
+
+    }
 
 }

@@ -85,10 +85,8 @@
 	  			</a>		
 	  		</div>		
   		</div>
-
-
-
   	</div>
+  	
 	<div class="col-md-12 import-export"> 
 		<a href="" class="pull-left"  >
 			<img src="{{ WEBROOT }}/img/icon-outlook.png">

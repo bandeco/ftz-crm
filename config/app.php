@@ -142,6 +142,8 @@ return [
 		'Laracasts\Flash\FlashServiceProvider',
 		'Maatwebsite\Excel\ExcelServiceProvider',
 		'Barryvdh\DomPDF\ServiceProvider',
+		'Artdarek\OAuth\OAuthServiceProvider',
+		'Spatie\SearchIndex\SearchIndexServiceProvider',
 
 
 		/*
@@ -195,6 +197,7 @@ return [
 		'Mail'      => 'Illuminate\Support\Facades\Mail',
 		'Password'  => 'Illuminate\Support\Facades\Password',
 		'Pays' 		=> 'Webpatser\Countries\CountriesFacade',
+		'OAuth'	    => 'Artdarek\OAuth\Facade\OAuth',
 		'PDF' 		=> 'Barryvdh\DomPDF\Facade',
 		'Queue'     => 'Illuminate\Support\Facades\Queue',
 		'Redirect'  => 'Illuminate\Support\Facades\Redirect',
@@ -202,6 +205,7 @@ return [
 		'Request'   => 'Illuminate\Support\Facades\Request',
 		'Response'  => 'Illuminate\Support\Facades\Response',
 		'Route'     => 'Illuminate\Support\Facades\Route',
+		'SearchIndex' => 'Spatie\SearchIndex\SearchIndexFacade',
 		'Schema'    => 'Illuminate\Support\Facades\Schema',
 		'Session'   => 'Illuminate\Support\Facades\Session',
 		'Storage'   => 'Illuminate\Support\Facades\Storage',
