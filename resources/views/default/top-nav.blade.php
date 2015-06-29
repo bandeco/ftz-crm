@@ -43,7 +43,7 @@
 			<li class="dropdown">	
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" id="avatar">
 					<!-- <span class="glyphicon glyphicon-user" aria-hidden="true"></span> -->
-					<img class="img-circle "alt="profile" src="{{WEBROOT}}/img/bibi.jpg" >
+					<img class="img-circle "alt="profile" src="{{WEBROOT}}/img/user.png" >
 					<span class="caret"></span>
 				</a> 
 				<ul class="dropdown-menu" role="menu">

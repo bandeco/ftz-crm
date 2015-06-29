@@ -144,6 +144,7 @@ return [
 		'Barryvdh\DomPDF\ServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Spatie\SearchIndex\SearchIndexServiceProvider',
+		
 
 
 		/*

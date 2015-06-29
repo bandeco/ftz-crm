@@ -7,6 +7,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="Plateforme de gestion de la relation clientèle FTZ" content="">
     <meta name="ousmane-hassane" content="">
+     <!-- AJAX metadata -->
+    <meta name="_token" content="{!! csrf_token() !!}"/>
+
     <link rel="icon" href="{{ WEBROOT}}/img/favicon/favicon.ico">
 	    
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
@@ -121,6 +124,9 @@
       </div>
     </footer>
     <script type="text/javascript">
+		$.ajaxSetup({
+		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		});
     	@yield('script')
     </script>
 

@@ -83,7 +83,12 @@
 					<h4>Contact(s)</h4>
 					<div class="trait pull-left"></div>
 				</header>
-				<div class="trait-box">
+				<div class="form-group">
+					<div class="col-sm-12">
+						{!! Form::label('groupecrm','Groupe CRM') !!}
+						{!! Form::select('groupe_id',$groupe,null,['class' =>'form-control input-sm']) !!}
+					</div>
+				</div>
 					<div class="form-group">
 					    <div class="col-sm-12">
 							{!! Form::label('tel','Téléphone') !!}
@@ -108,7 +113,7 @@
 							{!! Form::input('url','url_clt',null, ['class' =>'form-control input-sm', 'placeholder' =>'Adresse web de la société']) !!}
 						</div>
 					</div>
-				</div>
+				
 				<div class="form-group">
 				    <div class="col-sm-12">
 						<p></p>

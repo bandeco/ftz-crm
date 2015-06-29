@@ -33,6 +33,21 @@
 	  			<td><span >{!! Form::text('nom_clt',$profil->nom_clt,['class'=>'form-control input-sm']) !!}</td>
 	  		</tr>
 	  		<tr> 
+	  			@if(isset($profil->groupe->nom_groupe))
+	  				{{--*/ $groupecrm_nom = $profil->groupe->nom_groupe.' '.$profil->groupe->date_groupe;  $groupecrm = null;/*--}}
+	  				@foreach($groupe as $key => $value)	
+	  					@if($value == $groupecrm_nom)
+	  						{{--*/ $groupecrm = $key /*--}}
+	  					@endif
+	  				@endforeach	
+	  			@else
+	  				{{--*/ $groupecrm = 'null';/*--}}
+	  			@endif
+	  			 
+	   			<td><span class="title-profil">{!! Form::label('groupecrm','Groupe CRM') !!}</td>
+	  			<td><span >{!! Form::select('groupe_id',$groupe,$groupecrm,['class' =>'form-control input-sm']) !!}</td>
+	  		</tr>
+	  		<tr> 
 	  			<td><span class="title-profil">{!! Form::label('effectif_clt','Effectif') !!}</td>
 	  			<td>{!! Form::input('number','effectif_clt',$profil->effectif_clt,['class'=>'form-control input-sm']) !!}</td>
 	  		</tr>
@@ -72,7 +87,7 @@
 	  					{{--*/ $pays[$values]= $values /*--}}
 	  				@endforeach
 	  			<td><span class="title-profil">{!! Form::label('pays','Pays') !!}</td>
-	  			<td>{!! Form::select('pays_clt',[$pays],[$profil->pays_clt],['class'=>'form-control input-sm']) !!}</td>
+	  			<td>{!! Form::select('pays_clt',$pays,[$profil->pays_clt],['class'=>'form-control input-sm']) !!}</td>
 	  		</tr>
 	  		<tr> 
 	  			<td><span class="title-profil">{!! Form::label('ville','Ville') !!}</td>

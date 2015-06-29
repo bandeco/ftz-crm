@@ -16,7 +16,7 @@ class AgendaController extends Controller {
 	{
 		//
 		$actif = 'agenda';
-		return view('agenda', compact('actif'));
+		return view('agenda.calendar', compact('actif'));
 	}
 
 	/**

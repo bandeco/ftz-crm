@@ -46,7 +46,7 @@
 				<div class="form-group">
 				    <div class="col-sm-12">
 					    {!! Form::label('nom','Nom') !!}
-						{!! Form::text('nom_contact',null, ['class' =>'form-control input-sm',  'placeholder'=>'Nom de la société']) !!}
+						{!! Form::text('nom_contact',null, ['class' =>'form-control input-sm',  'placeholder'=>'Nom du contact']) !!}
 					</div>
 				</div>
 				<div class="form-group">

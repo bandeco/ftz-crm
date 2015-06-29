@@ -1,0 +1,47 @@
+[2015-06-20 01:16:06,018][INFO ][node                     ] [Melody Guthrie] version[1.5.2], pid[5704], build[62ff986/2015-04-27T09:21:06Z]
+[2015-06-20 01:16:06,030][INFO ][node                     ] [Melody Guthrie] initializing ...
+[2015-06-20 01:16:06,160][INFO ][plugins                  ] [Melody Guthrie] loaded [marvel], sites [marvel]
+[2015-06-20 01:16:24,584][INFO ][node                     ] [Melody Guthrie] initialized
+[2015-06-20 01:16:35,213][INFO ][node                     ] [Melody Guthrie] starting ...
+[2015-06-20 01:16:36,889][INFO ][transport                ] [Melody Guthrie] bound_address {inet[/0:0:0:0:0:0:0:0:9300]}, publish_address {inet[/192.168.1.2:9300]}
+[2015-06-20 01:16:38,051][INFO ][discovery                ] [Melody Guthrie] elasticsearch/CLIx388jTfeT20YsiFuZxA
+[2015-06-20 01:16:42,008][INFO ][cluster.service          ] [Melody Guthrie] new_master [Melody Guthrie][CLIx388jTfeT20YsiFuZxA][SEVERUS][inet[/192.168.1.2:9300]], reason: zen-disco-join (elected_as_master)
+[2015-06-20 01:16:45,112][INFO ][http                     ] [Melody Guthrie] bound_address {inet[/0:0:0:0:0:0:0:0:9200]}, publish_address {inet[/192.168.1.2:9200]}
+[2015-06-20 01:16:45,863][INFO ][node                     ] [Melody Guthrie] started
+[2015-06-20 01:16:53,022][INFO ][gateway                  ] [Melody Guthrie] recovered [3] indices into cluster_state
+[2015-06-20 01:17:02,106][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] creating index, cause [auto(bulk api)], templates [marvel], shards [1]/[1], mappings [_default_, shard_event, index_event, index_stats, routing_event, node_event, cluster_event, cluster_state, cluster_stats, node_stats, indices_stats]
+[2015-06-20 01:17:07,318][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [node_stats] (dynamic)
+[2015-06-20 01:17:09,637][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [index_event] (dynamic)
+[2015-06-20 01:17:11,244][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [cluster_state] (dynamic)
+[2015-06-20 01:17:12,083][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [cluster_event] (dynamic)
+[2015-06-20 01:17:13,098][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [routing_event] (dynamic)
+[2015-06-20 01:17:15,115][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [index_stats] (dynamic)
+[2015-06-20 01:17:16,849][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [indices_stats] (dynamic)
+[2015-06-20 01:17:18,539][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [cluster_stats] (dynamic)
+[2015-06-20 01:17:32,844][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.19] update_mapping [cluster_event] (dynamic)
+[2015-06-20 01:50:28,618][WARN ][http.netty               ] [Melody Guthrie] Caught exception while handling client http traffic, closing connection [id: 0xb7e67dd9, /192.168.191.1:50414 => /192.168.191.1:9200]
+java.io.IOException: Une connexion existante a dû être fermée par l’hôte distant
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.read(NioWorker.java:64)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.elasticsearch.common.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.elasticsearch.common.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.elasticsearch.common.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.elasticsearch.common.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-06-20 02:00:09,278][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] creating index, cause [auto(bulk api)], templates [marvel], shards [1]/[1], mappings [_default_, shard_event, index_event, index_stats, routing_event, node_event, cluster_event, cluster_state, cluster_stats, node_stats, indices_stats]
+[2015-06-20 02:00:09,957][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [node_stats] (dynamic)
+[2015-06-20 02:00:11,304][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [cluster_state] (dynamic)
+[2015-06-20 02:00:11,353][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [cluster_event] (dynamic)
+[2015-06-20 02:00:11,400][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [index_event] (dynamic)
+[2015-06-20 02:00:11,426][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [routing_event] (dynamic)
+[2015-06-20 02:00:11,470][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [indices_stats] (dynamic)
+[2015-06-20 02:00:11,638][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [index_stats] (dynamic)
+[2015-06-20 02:00:11,714][INFO ][cluster.metadata         ] [Melody Guthrie] [.marvel-2015.06.20] update_mapping [cluster_stats] (dynamic)

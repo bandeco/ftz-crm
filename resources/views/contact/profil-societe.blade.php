@@ -71,6 +71,16 @@
 	  			<td><span class="info">{{ $profil->nom_clt }}</span></td>
 	  		</tr>
 	  		<tr> 
+	  			<td><span class="title-profil">Groupe CRM</span></td>
+	  			<td>
+	  				@if(isset($profil->groupe->nom_groupe))
+	  					<span class="info">{{ $profil->groupe->nom_groupe.' '.$profil->groupe->date_groupe }}</span>
+	  				@else 
+	  					<span class="info">Non Assignée </span>
+	  				@endif
+	  			</td>
+	  		</tr>
+	  		<tr> 
 	  			<td><span class="title-profil">Effectif</span></td>
 	  			<td><span class="info">{{ $profil->effectif_clt }}</span></td>
 	  		</tr>
@@ -107,7 +117,7 @@
 	  			<td>
 	  				<span class="info">
 	  					{{ $profil->pays_clt }} 
-	  					@if($profil->ville_siege_clt) {{('.$profil->ville_siege_clt.')' }} @endif
+	  					@if($profil->ville_siege_clt) {{'('.$profil->ville_siege_clt.')' }} @endif
 	  				</span>
 	  			</td>
 	  		</tr>

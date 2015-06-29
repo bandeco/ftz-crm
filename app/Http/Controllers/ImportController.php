@@ -51,11 +51,12 @@ class ImportController extends Controller {
 		foreach($results as $value){
 				if(!empty($value->societe)){
 					$import[$i] = $value;
-					
 				}	
 				$i++;
 		}
-		
+
+		var_dump($import);
+		dd();
 		foreach($import as $value){
 			Societe::create([
 				'nom_clt'=>$value->societe,
@@ -72,7 +73,7 @@ class ImportController extends Controller {
 				'adresse_siege_clt'=>$value->adresse,
 			]);
 		}
-		
+		return redirect('import');
 	}
 
 		

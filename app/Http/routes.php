@@ -17,7 +17,15 @@ Route::get('/','WelcomeController@index');
 
 /* Societe & Contact Views Routes */
 
-Route::get('contact/search',['as'=>'contact.search','uses'=>'ContactController@search']);
+Route::get('contact/search',['as'=>'societe.search','uses'=>'SocieteController@search']);
+
+Route::get('societe/grille', function() {
+	$actif ='contact';
+	$grille = 1;
+  return view('contact.contact',compact('actif','grille'));
+});
+
+Route::resource('groupe', 'GroupeController');
 
 Route::resource('societe', 'SocieteController');
 
