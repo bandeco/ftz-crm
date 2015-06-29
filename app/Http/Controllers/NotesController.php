@@ -1,9 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
+
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+
+use App\Note; 
+use DB;
 
 class NotesController extends Controller {
 
@@ -14,9 +17,9 @@ class NotesController extends Controller {
 	 */
 	public function index()
 	{
-		//
-		$actif = 'notes';
-		return view('notes', compact('actif'));
+		$notes= Note::orderBy('updated_at', 'desc')->get();
+		$actif ='notes';
+		return view('notes.index',compact('notes','actif'));
 	}
 
 	/**
@@ -26,7 +29,8 @@ class NotesController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$actif ='notes';
+		return view('notes.create',compact('actif'));
 	}
 
 	/**
@@ -34,9 +38,12 @@ class NotesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$actif ='notes';
+		$note = Note::create($request->all()); 
+		return view('notes.create',compact('actif','note'));
+
 	}
 
 	/**
@@ -48,6 +55,10 @@ class NotesController extends Controller {
 	public function show($id)
 	{
 		//
+		$actif ='notes';
+		$note= Note::FindOrFail($id);
+		return view('notes.aff_note',compact('note','actif'));
+
 	}
 
 	/**
@@ -58,7 +69,10 @@ class NotesController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$actif ='notes';
+		$note= Note::FindOrFail($id);
+		return view('notes.edit',compact('note','actif'));
+
 	}
 
 	/**
@@ -67,9 +81,15 @@ class NotesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id,Request $request)
 	{
-		//
+		$actif ='notes';
+
+		$note= Note::FindOrFail($id);
+		$note->update($request->all());
+		/* a changer mettre la vue show normalement*/
+		return redirect(route('notes.index'));
+
 	}
 
 	/**

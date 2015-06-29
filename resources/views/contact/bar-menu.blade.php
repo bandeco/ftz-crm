@@ -16,7 +16,7 @@
 		
 	<div class="col-md-6 col-md-offset-2 right-btn-filter">
 	<div id="navbar-action" class="navbar-collapse collapse navbar-right" >
-		<a class="btn btn-default btn-smenu-position ajout" id="grille" href="" title="Grille" role="button">
+		<a class="btn btn-default btn-smenu-position ajout" id="grille" href="#" title="Grille" role="button">
 			<span class="glyphicon glyphicon-th" aria-hidden="true"></span> 
 		</a>
 		<a class="btn btn-default btn-smenu-position" href="#" title="Liste" role="button">

@@ -59,6 +59,11 @@
 
 @stop
 
+@section('script')
+
+
+
+@stop
 
 
 

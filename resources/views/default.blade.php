@@ -12,7 +12,7 @@
 
     <link rel="icon" href="{{ WEBROOT}}/img/favicon/favicon.ico">
 	    
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	
 	@yield('head')
 
     <title> @yield('title') </title>
@@ -123,22 +123,21 @@
 		<!-- <h6>&copy; Copyrith 2015 FTZ</h6> -->
       </div>
     </footer>
-    <script type="text/javascript">
-		$.ajaxSetup({
-		   headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-		});
+    <script>
+		// $.ajaxSetup({
+		//    headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+		// });
     	@yield('script')
     </script>
-
 
      <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/customjs.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{WEBROOT}}/js/bootstrap.min.js"></script>
+	<script src="{{WEBROOT}}/js/customjs.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="{{WEBROOT}}/js/ie10-viewport-bug-workaround.js"></script>
     
   </body>
 </html>

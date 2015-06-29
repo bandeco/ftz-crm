@@ -147,4 +147,3 @@
 	 @endforeach
 	</table>
 @stop
-
