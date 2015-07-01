@@ -1,10 +1,11 @@
 @extends('default')
 
-@if($grille== 2)
+
+@if($grille==2)
 	@section('title','Groupe CRM')
 	@section('titre-entete','Groupe(s) CRM')
 @else
-	@section('titre-entete','Contact')
+	@section('title','Contact')
 	@section('titre-entete','Contact')
 @endif
 
@@ -56,14 +57,21 @@
 				</a>
 			</div>											
 	</div>
+	<a href="#" id="test">Test Link</a>
 
 @stop
+
 
 @section('script')
 
-
+jQuery(function($){
+	$('#test').click(function(){
+			alert('TEST');
+		});
+});
 
 @stop
+
 
 
 

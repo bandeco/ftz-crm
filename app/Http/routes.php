@@ -11,6 +11,13 @@
 |
 */
 
+/* Test Page */
+
+Route::get('test',function(){
+		return view('test');
+	});
+
+
 /* Home View Route */
 
 Route::get('/','WelcomeController@index');
