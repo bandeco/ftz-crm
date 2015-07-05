@@ -27,10 +27,30 @@ class SocieteController extends Controller {
 	public function index()
 	{
 		//
-		$societe = Societe::where('etat',1)->get();
+		$societe = Societe::where('etat',1)->orderBy('nom_clt','asc')->get();
 		$actif = 'contact';
-		$grille = 0;
-		return view('contact.contact', compact('actif','societe','grille'));
+		$type = 0;
+		return view('contact.contact', compact('actif','societe','type'));
+	}
+
+	/**
+	 * Display societe by list 
+	 *
+	 * @return Response
+	 */
+	public function liste()
+	{
+		$grille = 1;
+		$societe = Societe::where('etat',1)->get();
+		return view('contact.affichage-liste-contact',compact('societe','grille'));
+	}
+
+	public function grille()
+	{
+		$grille = 1;
+		$societe = Societe::where('etat',1)->get();
+		return view('contact.affichage-grille-contact',compact('societe','grille'));
+				
 	}
 
 	/**
@@ -155,8 +175,20 @@ class SocieteController extends Controller {
 	public function update($id, CreateSocieteRequest $request)
 	{
 		//
+		$client = new Client();
+		$params = array();
+
 		$profil = Societe::findOrFail($id);
 		$profil->update($request->all());
+
+		$params['body']  = ['nom'=>$request->input('nom_clt'),'pays'=>$request->input('pays_clt')];
+
+		$params['index'] = 'ftz';
+		$params['type']  = 'societes';
+		$params['id']    = $id;
+
+		$indexes = $client->index($params);
+		
 		return  redirect(route('societe.show', $id));
 	}
 

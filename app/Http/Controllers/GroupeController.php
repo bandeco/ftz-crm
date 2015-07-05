@@ -21,8 +21,8 @@ class GroupeController extends Controller {
 		//
 		$actif = 'contact';
 		$groupe = Groupe::where('etat',1)->get();
-		$grille = 2;
-		return view('contact.contact',compact('actif','grille','groupe'));
+		$type = 2;
+		return view('contact.contact',compact('actif','type','groupe'));
 	}
 
 	/**

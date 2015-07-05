@@ -213,6 +213,11 @@ body{
 	margin-top:4p;
 	
 }
+
+.checkaction{
+	display:non;
+	
+}
 #navbar-action{
 	margin-top:8px;
 }
@@ -279,6 +284,10 @@ user agent stylesheetli {
 }
 
 /* Style Page Contact*/
+#contact-letter a{
+	padding-right:12px;
+	font-size: 15px;
+}
 .affichage-border{
 	border-right: 1px solid #ddd;
 }

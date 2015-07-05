@@ -5,13 +5,15 @@
 
 @section('titre-entete')
 
-<div class="pull-left" style="margin:-6px 4px 4px 4px;">
+	<div class="pull-left" style="margin:-6px 4px 4px 4px;">
+		@if($contact->societe)
 			<a class="btn btn-danger btn-smenu-position" href="{{ route('societe.show',[$contact->societe_id])}}" role="button">
 				<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> 
 			</a>
-
-			{{ 'Contact Société '.$contact->societe->nom_clt.' : '.$contact->nom_contact.' '.$contact->prenoms_contact}}
+		@endif
+		@if($contact->societe){{ 'Contact Société '.$contact->societe->nom_clt.' : ' }} @endif {{ $contact->nom_contact.' '.$contact->prenoms_contact}}
 	</div>
+
 
 @stop
 

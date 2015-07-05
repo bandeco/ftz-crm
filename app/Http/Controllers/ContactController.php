@@ -24,7 +24,10 @@ class ContactController extends Controller {
 	 */
 	public function index()
 	{
-		return ('');
+		$contact = Contact::with(['societe'=> function($query){ $query->select('nom_clt','id'); }])->where('etat',1)->orderBy('nom_contact','asc')->get();
+		$actif = 'contact';
+		$type = 1;
+		return view('contact.contact', compact('actif','contact','type'));
 	}
 
 	/**

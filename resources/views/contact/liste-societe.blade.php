@@ -1,19 +1,9 @@
 <!-- Affichage en Liste -->
-<div class="col-md-9  affichage-border">
 <!-- Checkbox Name Counter -->
 {{--*/ $c = 1 /*--}}
 
 	<table class="table table-noborder-top table-bordere table-contact">
-	<tr>
-		<td>{!! Form::checkbox('ckall', 'all' , null, ['class' => 'listcheckbox','id'=>'selectall']) !!}</td>
-		<td>
-			{{--*/ $x = 'A' /*--}}
-			@for($i = 1; $i<= 26; $i++)
-				<a href="">{{ $x }}</a>
-				{{--*/ $x++; /*--}}
-			@endfor
-		</td>
-	</tr>
+
 	@foreach($societe as $societe)
 	<tr style="border-bottom: 1px solid #ddd"> 
 		<td vertical-align="middle">{!! Form::checkbox('c'.$c, $societe->id, null, ['class' => 'listcheckbox checkbox']) !!}</td>
@@ -65,4 +55,4 @@
 	    </div>
 	  </div>
 	</div>
-</div>
+

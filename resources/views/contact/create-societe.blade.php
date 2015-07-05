@@ -24,7 +24,7 @@
 				  !!}
 			</div>
 		  	<div class="form-group ">
-				{!! Form::submit('Enregistrer',['class' =>'btn btn-success btn-smenu-position dropdown-toggle']) !!}
+				{!! Form::submit('Enregistrer',['class' =>'btn btn-success btn-smenu-position']) !!}
 			</div>
 		</div>	
 	</div>

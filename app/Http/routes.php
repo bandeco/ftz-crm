@@ -24,13 +24,28 @@ Route::get('/','WelcomeController@index');
 
 /* Societe & Contact Views Routes */
 
+Route::post('societe/action',['as'=>'societe.action',function(){
+	if(Request::input('supp')){
+		
+		$data = Request::all();
+		var_dump($data);
+		dd();
+		return('suppression');
+	}
+	if(Request::input('export')){
+		return('Exportation');
+	}
+	if(Request::input('add_note')){
+		return('Ajout de note');
+	}
+
+}]);
+
 Route::get('contact/search',['as'=>'societe.search','uses'=>'SocieteController@search']);
 
-Route::get('societe/grille', function() {
-	$actif ='contact';
-	$grille = 1;
-  return view('contact.contact',compact('actif','grille'));
-});
+Route::get('grille','SocieteController@grille');
+
+Route::get('liste','SocieteController@liste');
 
 Route::resource('groupe', 'GroupeController');
 

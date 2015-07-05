@@ -9,17 +9,27 @@
 
 @section('content')
 	
-<a href="#" id="test">Test Link</a>
-
+<a href="#" id="grille">Test Link</a><br/>
+<a href="{{ url('/grille') }}" id="grille">Link</a>
+<div class="row">
+	<div class="col-md-8 result">
+		
+	</div>
+</div>
 @stop
 
 @section('script')
-  
+
 jQuery(function($){
-		$('#test').click(function(){
-			alert('TEST');
-		});		
-		
-	 });
+	$('#grille').click(function(e){
+		e.preventDefault();
+			$.get( 'grille',function( data ) {
+			  $( ".result" ).html( 'TEST' );
+			  console.log(data);
+			  alert("Data Loaded: " +   data);
+			});
+		});
 	
+});
+
 @stop
