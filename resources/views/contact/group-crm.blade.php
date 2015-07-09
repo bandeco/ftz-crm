@@ -1,5 +1,5 @@
 <!-- Affichage en Grille -->
-<div class="col-md-9 affichage-border" >
+<div class="col-md-9 affichage-borde" >
 	{!! Form::open() !!}
 	<table class=" table table-noborder-top  table-contact">
 	<!-- Compteur pour l'affichage en grille -->

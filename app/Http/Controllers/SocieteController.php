@@ -188,7 +188,7 @@ class SocieteController extends Controller {
 		$params['id']    = $id;
 
 		$indexes = $client->index($params);
-		
+
 		return  redirect(route('societe.show', $id));
 	}
 
@@ -205,5 +205,62 @@ class SocieteController extends Controller {
 		$profil->update(['etat'=>0]);
 		return  redirect(route('societe.index'));
 	}
+	/**
+	 * Remove the selected resources from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
 
-}
+
+	public function destroyselect($data)
+		{
+			//
+
+			var_dump($data);
+			dd();
+			//return $data;
+		}
+
+	/**
+	 * Return Societe Sort to View.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+
+
+	public function TriSociete($tripar)
+		{
+			//
+			if($tripar=='pays'){
+				$societe = Societe::where('etat',1)->orderBy('pays_clt','asc')->get();
+				$actif = 'contact';
+				$type = 0;
+			}elseif($tripar=='notes'){
+				$societe = Societe::where('etat',1)->orderBy('pays_clt','asc')->get();
+				$actif = 'contact';
+				$type = 0;
+			}elseif($tripar=='groupe'){
+				$societe = DB::table('societes')
+								->leftjoin('groupes','societes.groupe_id','=','groupes.id')
+								->orderBy('groupes.nom_groupe','asc')->where('societes.etat',1)->get();
+				$actif = 'contact';
+				$type = 0;
+			}elseif($tripar=='ajout'){
+				$societe = Societe::where('etat',1)->orderBy('created_at','asc')->get();
+				$actif = 'contact';
+				$type = 0;
+			}elseif($tripar=='modification'){
+				$societe = Societe::where('etat',1)->orderBy('updated_at','asc')->get();
+				$actif = 'contact';
+				$type = 0;
+			}elseif($tripar=='alpha'){
+				$societe = Societe::where('etat',1)->orderBy('nom_clt','asc')->get();
+				$actif = 'contact';
+				$type = 0;
+			}
+			
+			return view('contact.contact', compact('actif','societe','type'));
+		}
+	}

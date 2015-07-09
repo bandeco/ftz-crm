@@ -1,29 +1,20 @@
 <!-- Affichage en Liste -->
 <!-- Checkbox Name Counter -->
-{{--*/ $c = 1; $letter = 'A'; $marquer = 0; /*--}}
+{{--*/ $c = 1 /*--}}
 
 	<table class="table table-noborder-top table-bordere table-contact">
 
-	@foreach($societe as $societe)
-	
-	@if($letter != ucfirst(substr($societe->nom_clt,0,1)))
-		{{--*/ $letter = ucfirst(substr($societe->nom_clt,0,1)); $marquer = 0; /*--}}
-		
-	@endif
-	@if($letter == ucfirst(substr($societe->nom_clt,0,1)) &&  $marquer == 0)
+	@foreach($$listegroupe as $societe)
+	@if()
 		<tr>
-			<td><h3 id="{{ $letter }}">{!! $letter !!}</h3></td>
+
 		</tr>
-		{{--*/ $marquer = 1; /*--}}
 	@endif
-	
-	
 	<tr style="border-bottom: 1px solid #ddd"> 
 		<td vertical-align="middle">{!! Form::checkbox('c'.$c, $societe->id, null, ['class' => 'listcheckbox checkbox']) !!}</td>
 	  	<td>
 	  		<div class=" info-preview pull-left">
 	  		    <a href="{{route('societe.show',[$societe->id])}}"><p class="media-heading">{{ $societe->nom_clt}}</p></a>
-	  		  	   @if($societe->nom_groupe)<p>{{ $societe->nom_groupe }} </p>@endif
 	  		    <p>{{ $societe->pays_clt }} @if($societe->ville_siege_clt){{'('.$societe->ville_siege_clt.')' }} @endif</p>
 	  		   @if($societe->tel_siege_clt)<p>{{ 'Tél : '.$societe->tel_siege_clt }} </p>@endif
 	  		</div>

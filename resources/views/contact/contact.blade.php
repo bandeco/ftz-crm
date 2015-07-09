@@ -23,7 +23,7 @@
 			<td>
 				{{--*/ $x = 'A' /*--}}
 				@for($i = 1; $i<= 26; $i++)
-					<a href="">{{ $x }}</a>
+					<a href="#{{ $x }}">{{ $x }}</a>
 					{{--*/ $x++; /*--}}
 				@endfor
 			</td>
@@ -78,28 +78,37 @@
 @section('script')
 
 jQuery(function($){
-
+	<!-- Count the number of checkbox -->
+		 $c = 0;
 		<!--  SELECT AND DESELECT ALL CHECKBOX -->
-
         $('#selectall').click(function(event) {  //on click 
             if(this.checked) { // check select status
                 $('.checkbox').each(function() { //loop through each checkbox
-                    this.checked = true;  //select all checkboxes with class "checkbox1"               
+                    this.checked = true;  //select all checkboxes with class "checkbox1"  
+                    $c++;       
                 });
             }else{
                 $('.checkbox').each(function() { //loop through each checkbox
-                    this.checked = false; //deselect all checkboxes with class "checkbox1"                       
+                    this.checked = false; //deselect all checkboxes with class "checkbox1" 
+                    $c--;  
+                                      
                 });         
             }
         });
 
    	<!-- Function pour affichage des actions sur les selects -->
+  
 	$('input[type="checkbox"]').click(function(){
 		 if(this.checked == true){
             $(".checkaction").show();
+            $c++;
         }
         else{
-        	$(".checkaction").hide();
+        	$c--;
+        	if($c==0 ){
+        		$(".checkaction").hide();
+        	}
+
         }
     }); 
    

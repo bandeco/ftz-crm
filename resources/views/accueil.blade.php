@@ -9,7 +9,7 @@
 @section('content')
 
 <div class="panel panel-default">
-  <div class="panel-heading" style="text-align: center"><strong>Bienvenue dans le CRM FTZ </strong></div>
+  <div class="panel-heading" style="text-align: center"><strong>Bienvenue dans le CRM FTZ</strong></div>
   <div class="panel-body" >
 		<p>
 			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been

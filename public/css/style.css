@@ -215,7 +215,7 @@ body{
 }
 
 .checkaction{
-	display:non;
+	display:none;
 	
 }
 #navbar-action{

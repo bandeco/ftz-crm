@@ -120,4 +120,19 @@ class ContactController extends Controller {
 		return  redirect(route('societe.show',$id));
 	}
 
+	/**
+	 * Return Contact Sort to View.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+
+
+	public function TriContact($type)
+		{
+			//
+
+			return 'Tri Contact '.$type.' Thanks';
+		}
+
 }

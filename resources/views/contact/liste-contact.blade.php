@@ -10,6 +10,7 @@
 			  		    <a href="{{route('contact.show',[$contact->id])}}"><p class="media-heading">{{ $contact->nom_contact.' '.$contact->prenoms_contact }}</p></a>
 			  		   @if($contact->societe)<p>{{ $contact->societe->nom_clt }} </p>@endif
 			  		   @if($contact->fonction_contact)<p>{{ $contact->fonction_contact }} </p> @endif
+			  		   
 			  		</div>
 			  		<div class="action-place">
 			  		<ul>

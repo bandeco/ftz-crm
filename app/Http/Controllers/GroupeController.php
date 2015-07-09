@@ -62,10 +62,8 @@ class GroupeController extends Controller {
 		//
 		$societe = Groupe::findOrFail($id)->societe()->select('nom_clt','pays_clt','ville_siege_clt')->where('etat',1)->get();
 		$actif = 'contact';
-		$grille = 0;
-		//var_dump($societe);
-		//dd();
-		return view('contact.contact', compact('actif','societe','grille'));
+		$type = 0;
+		return view('contact.contact', compact('actif','societe','type'));
 	}
 
 	/**

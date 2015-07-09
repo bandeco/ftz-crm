@@ -1,5 +1,5 @@
 <?php
-
+use App\Societe;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -25,21 +25,47 @@ Route::get('/','WelcomeController@index');
 /* Societe & Contact Views Routes */
 
 Route::post('societe/action',['as'=>'societe.action',function(){
+	$data = Request::all();
+	
 	if(Request::input('supp')){
-		
-		$data = Request::all();
-		var_dump($data);
-		dd();
-		return('suppression');
+		if($data['type']== 0){
+			foreach ($data as $key => $value) {
+				if(substr($key,0,1) == 'c'){
+					$profil = Societe::findOrFail($value);
+					var_dump($profil);
+					dd();
+					$profil->update(['etat'=>0]);
+				}
+				return  redirect(route('societe.index'));
+			}
+			
+		// return  redirect(route('societe.index'));	
+		}else{
+			return('suppression contact');
+		}
 	}
 	if(Request::input('export')){
-		return('Exportation');
+		if($data['type']== 0){
+			return('export  societe');
+		}else{
+			return('export contact');
+		}
 	}
 	if(Request::input('add_note')){
-		return('Ajout de note');
+		if($data['type']== 0){
+			return('note  societe');
+		}else{
+			return('note contact');
+		}
 	}
 
 }]);
+
+Route::get('societe/Tri/{tripar}',['as'=>'societe.TriSociete', 'uses'=>'SocieteController@TriSociete']);
+
+Route::get('contact/Tri/{tripar}',['as'=>'contact.TriContact', 'uses'=>'ContactController@TriContact']);
+
+Route::get('societe/suppression/{data}',['as'=>'societe.destroyselect','uses'=>'SocieteController@destroyselect']);
 
 Route::get('contact/search',['as'=>'societe.search','uses'=>'SocieteController@search']);
 
